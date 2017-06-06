@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>blog template generator • complemental</title>
+    <link href="https://complemental.github.io/assets/generator.shared.min.css" rel="stylesheet" type="text/css" media="all">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Teko" rel="stylesheet">    
+</head>
+<body>
+	<main>
+		<h1>blog template generator</h1>
+		<form>
+			<label for="blogname">blog name</label>
+			<input type="text" name="blogname" placeholder="blog username">
+
+			<label for="blogtitle">blog title</label>
+			<input type="text" name="blogtitle" placeholder="(optional) blog title">
+
+			<label for="colorbackground">background color</label>
+			<input type="text" name="colorbackground" placeholder="color for the background" value="#f3f3f3">
+
+			<label for="colorhighlight">accent color</label>
+			<input type="text" name="colorhighlight" placeholder="color for links and blog title" value="#8eb8e5">
+
+			<label for="avatarimage">avatar image link</label>
+			<input type="text" name="avatarimage" placeholder="(optional) link to an avatar image">
+
+			<label for="headerimage">header image link</label>
+			<input type="text" name="headerimage" placeholder="(optional) link to a header image">
+
+			<label for="headerblurb">header blurb</label>
+			<input type="text" name="headerblurb" placeholder="(optional) blurb text for the header">
+
+			<label for="favicon">favicon link</label>
+			<input type="text" name="favicon" placeholder="(optional) link to a favicon image">
+		</form>
+		<div id="generate" class="btn-full"><i class="fa fa-cogs"></i> generate blog template</div>
+		<form id="generated-panel" style="display:none;">
+			<textarea readonly></textarea>
+		</form>
+	</main>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://complemental.github.io/tumblr/assets/jquery.generator.blog.min.js"></script>
+	<script type="text/javascript" src="https://complemental.github.io/tumblr/assets/jquery.blogcontinuity.min.js"></script>
+</body>
+</html>
