@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!--
+ * tumblr template + continuity
+ * v1.7
+ * 06/04/2017
+ * music is the sound of math and code is not spaghetti
+ * complemental.github.io
+-->
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<title>{{{blogtitle}}}</title>
+	<link href="{{{favicon}}}" rel="shortcut icon">
+	<link href="https://complemental.github.io/tumblr/assets/style.min.css" media="all" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Oleo+Script+Swash+Caps:700" rel="stylesheet">
+	<style>
+	          /* DEFAULT OVERRIDES */
+	          body {
+	              font-family: 'Roboto Condensed', 'calibri', 'arial', sans-serif;
+	              color: #333;
+	          }
+	          body, #header-avatar {
+	              background: {{{colorbackground}}}; /* main background */
+	          }
+	          a {
+	              color:{{{colorhighlight}}}; /* link color */
+	              text-decoration: none;
+	          }
+	          a:hover {
+	              color:{{{coloralt}}}; /* link hover color */
+	          }
+	          #header-content p {
+	              color: #9C9C9C; /* header blurb text color */
+	          }
+	          #header-img {
+	              background-image: url('{{{headerimage}}}'); /* header image */
+	          }
+	          #header-content h1 {
+	              font-family:'Oleo Script Swash Caps', 'Roboto Condensed', sans-serif;
+	              font-size:40px;
+	              font-weight:700;
+	              color:{{{colorhighlight}}}; /* blog title color */
+	          }	          
+
+	          /* CUSTOM OVERRIDES */
+	          
+	</style>
+</head>
+<body>
+	<header>
+		<div id="header-img"></div>
+		<div id="header-content">
+			<div id="header-avatar"></div>
+			<h1>{{{blogtitle}}}</h1><!-- your blog's title -->
+			<p>{{{headerblurb}}}</p><!-- your blurb -->
+		</div>
+	</header>
+	<div id="main-wrapper">
+		<div id="wrapper-content"></div>
+		<div id="sidebar">
+			<!-- sidebar snippets can be arranged below -->
+
+			<!-- sidebar snippets can be arranged above -->
+			<div class="page-nav"></div>
+		</div>
+		<div class="calage"></div>
+		<div class="page-nav"></div>
+	</div>
+	<footer>
+		<div class="hbar"></div>
+		<div id="copyright">
+			<a href="http://complemental.github.io/" title="built with ❥ by complemental">© copyright 2017 all rights reserved</a>
+		</div>
+	</footer>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+	<script src="https://complemental.github.io/tumblr/assets/script.min.js"></script> 
+	<script>
+	           var lcOptions = {
+	               blogname:'{{{blogname}}}', /* your blog's username inside the quotes */
+	               avatar:'{{{avatarimage}}}', /* your avatar image url inside the quotes */
+	               pages:[
+	                  /**
+	                   *  comma-separated list of page anchors 
+	                   *  listed in chronological order from newest to oldest
+	                   *  this is what you'll edit whenever you add a new page
+	                   *  eg. 
+	                   *      '20170708',
+	                   *      '20170619',
+	                   *      '20170601',
+	                   *      '20170527',
+	                   *                           
+	                   *  ps. to avoid confusion with page numbers
+	                   *      it's recommended to not name your files with sequential numerals (ie. 1 or 002 or iii)
+	                   *      for organization you can name them by date (ie. yyyymmdd or may272017)
+	                   *      but you can also name them random alphanumeric strings (ie. awesomepageisawesome)
+	                   *
+	                   */
+	                   '20170527'
+	                   /* ^^ if this is your brand new template, change what's in the quotes to the name of your first .xml file */
+	                   /* nothing should be underneath this line, additional pages go on top */
+	              ]
+	           };
+	</script>
+</body>
+</html>
