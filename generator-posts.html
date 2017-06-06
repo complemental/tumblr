@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>blog posts generator • complemental</title>
+    <link href="https://complemental.github.io/tumblr/assets/generator.posts.min.css" rel="stylesheet" type="text/css" media="all">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Teko|Roboto:400,300,700" rel="stylesheet">
+    <link href="http://i.imgur.com/wLxBUJo.png" rel="shortcut icon">
+</head>
+<body>
+	<main style="width:500px;">
+		<h1>blog posts generator</h1>
+		<div id="content" class="repeat" style="display:none;">
+			<div class="wrapper">
+				<div class="container">
+					<form class="template row">
+						<div class="type-selection">
+							<ul>
+								<li class="option-text"></li><li class="option-photo"></li><li class="option-quote"></li><li class="option-ask"></li><li class="option-chat"></li><li class="option-video"></li> 
+							</ul>
+						</div>
+						<div class="preview" style="display:none;"></div>
+						<div class="input-container" style="display:none;">
+							<label for="post[{{row-count-placeholder}}][text]" class="type-option type-text type-quote type-chat">text post</label>
+				            <textarea name="post[{{row-count-placeholder}}][text]" class="input-text type-option type-text type-quote type-chat" placeholder="(your text/quote/chat here)"></textarea>
+
+				            <label for="post[{{row-count-placeholder}}][quotesource]" class="type-option type-quote">quote source</label>
+				            <input type="text" name="post[{{row-count-placeholder}}][quotesource]" class="input-quotesource type-option type-quote" placeholder="(optional quote source)">
+
+							<label for="post[{{row-count-placeholder}}][media]" class="type-option type-photo type-video">media post</label>
+				            <input type="text" name="post[{{row-count-placeholder}}][media]" class="input-media type-option type-photo type-video" placeholder="(jpg/png/gif/youtube link)">
+
+				            <label for="post[{{row-count-placeholder}}][askuser]" class="type-option type-ask">ask post user</label>
+				            <input type="text" name="post[{{row-count-placeholder}}][askuser]" class="input-askuser type-option type-ask" placeholder="(name or username of asker, leave empty if anonymous)">
+
+				            <label for="post[{{row-count-placeholder}}][askuserlink]" class="type-option type-ask">ask post user link</label>
+				            <input type="text" name="post[{{row-count-placeholder}}][askuserlink]" class="input-askuserlink type-option type-ask" placeholder="(optional link to asker's journal or blog, leave empty if anonymous)">
+
+				            <label for="post[{{row-count-placeholder}}][askuserpic]" class="type-option type-ask">ask post user avatar</label>
+				            <input type="text" name="post[{{row-count-placeholder}}][askuserpic]" class="input-askuserpic type-option type-ask" placeholder="(optional link to asker's avatar, leave empty if anonymous)">
+
+				            <label for="post[{{row-count-placeholder}}][ask]" class="type-option type-ask">ask post question</label>
+				            <textarea name="post[{{row-count-placeholder}}][ask]" class="input-ask type-option type-ask" placeholder="(submitted question)"></textarea>
+
+				            <label for="post[{{row-count-placeholder}}][askreply]" class="type-option type-ask">ask post reply</label>
+				            <textarea name="post[{{row-count-placeholder}}][askreply]" class="input-askreply type-option type-ask" placeholder="(your answer)"></textarea>
+
+				            <label for="post[{{row-count-placeholder}}][note]">note</label>
+				            <textarea name="post[{{row-count-placeholder}}][note]" class="input-note" placeholder="(optional note of your own)"></textarea>
+
+				            <label for="post[{{row-count-placeholder}}][tags]">tags</label>
+				            <input type="text" name="post[{{row-count-placeholder}}][tags]" class="input-tags" placeholder="(optional list of hashtags separated by commas)">
+
+				            <label for="post[{{row-count-placeholder}}][title]">title</label>
+				            <input type="text" name="post[{{row-count-placeholder}}][title]" class="input-title" placeholder="(optional post title)">
+
+				            <label for="post[{{row-count-placeholder}}][date]">date</label>
+				            <input type="text" name="post[{{row-count-placeholder}}][date]" class="input-date" placeholder="(optional post date)">
+
+				            <label for="post[{{row-count-placeholder}}][permalink]">reblog permalink</label>
+				            <input type="text" name="post[{{row-count-placeholder}}][permalink]" class="input-permalink" placeholder="(optional link to reblogged post)">
+
+				            <label for="post[{{row-count-placeholder}}][reblog]">reblog note</label>
+				            <input type="text" name="post[{{row-count-placeholder}}][reblog]" class="input-reblog" placeholder="(optional note from reblogged post)">	
+
+				            <label for="post[{{row-count-placeholder}}][user]">reblog note user</label>
+				            <input type="text" name="post[{{row-count-placeholder}}][user]" class="input-user" placeholder="(optional user who added the note if different from the reblogged user)">
+
+				            <div class="remove"><i class="fa fa-times"></i> delete post</div>
+						</div>		            
+			            <ul>
+							<li class="view-mode" title="collapse"><i class="fa fa-share"></i></li>
+							<li class="move" title="reposition"><i class="fa fa-arrows-v"></i></li>
+						</ul>
+					</form>
+				</div>
+				<div class="add"><i class="fa fa-plus"></i> add new post</div>
+				<div id="generate" style="display:none;"><i class="fa fa-cogs"></i> generate posts</div>
+				<form id="generated-panel" style="display:none;">
+					<textarea readonly></textarea>
+				</form>			
+			</div>		
+		</div>
+	</main>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="https://cdn.rawgit.com/complemental/tumblr/bb6cf451/assets/repeatable.min.js"></script>
+	<script type="text/javascript" src="https://complemental.github.io/tumblr/assets/jquery.generator.posts.min.js"></script>
+	<script type="text/javascript" src="https://complemental.github.io/tumblr/assets/jquery.blogcontinuity.min.js"></script>
+</body>
+</html>
